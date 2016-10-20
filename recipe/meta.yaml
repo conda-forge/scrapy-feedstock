@@ -1,7 +1,7 @@
 {% set name = "Scrapy" %}
-{% set version = "1.1.3" %}
+{% set version = "1.2.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "fab9c5074bc484add855d2d072ff26fdc0ba5344858cc68178f4f4f39a6f2cce" %}
+{% set hash_val = "71e76c4bdbf54f0b7c3467228b819f9a1eac0f89a519877c310121ec0d8f6137" %}
 
 package:
   name: {{ name|lower }}
