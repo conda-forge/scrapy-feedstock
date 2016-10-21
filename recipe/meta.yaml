@@ -13,12 +13,10 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  # Skip win+py3k as the build as the framework is not 100% functional.
-  skip: True  # [win and py3k]
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - scrapy = scrapy.cmdline:execute
-  number: 0
+  number: 1
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
@@ -29,7 +27,8 @@ requirements:
 
   run:
     - python
-    - twisted >=10.0.0
+    - twisted >=10.0.0  # [not win or not py3k]
+    - twisted >=16.4.0  # [win and py3k]
     - w3lib >=1.15.0
     - queuelib
     - lxml
@@ -78,7 +77,7 @@ test:
   commands:
     # Ideally, we will run tests here but we require to provide the tests
     # requirements first.
-    - scrapy version
+    - scrapy bench
 
 about:
   home: http://scrapy.org/
