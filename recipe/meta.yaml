@@ -1,7 +1,7 @@
 {% set name = "Scrapy" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "44a2bf1fac86e5ee844d425509bd6a506039ec4dc92ac1f1872a1d504f75b476" %}
+{% set hash_val = "8c0127909dd47afea790dc5cb8b1e67aa0a39e1b734718201df03787cab73b4c" %}
 
 package:
   name: {{ name|lower }}
@@ -11,16 +11,12 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   {{ hash_type }}: {{ hash_val }}
-  patches:
-    # This patch fixes an issue with pyc files in templates directory that
-    # breaks conda build.
-    - 000-manifest-ignore-pyc.patch
 
 build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - scrapy = scrapy.cmdline:execute
-  number: 1
+  number: 0
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).

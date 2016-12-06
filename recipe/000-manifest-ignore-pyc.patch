@@ -1,9 +1,0 @@
-diff --git a/MANIFEST.in b/MANIFEST.in
-index 04b3e1f..94de4f3 100644
---- a/MANIFEST.in
-+++ b/MANIFEST.in
-@@ -12,3 +12,4 @@ prune docs/build
- recursive-include extras *
- recursive-include bin *
- recursive-include tests *
-+global-exclude __pycache__ *.py[cod]
