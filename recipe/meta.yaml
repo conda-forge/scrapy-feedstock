@@ -1,7 +1,7 @@
 {% set name = "Scrapy" %}
-{% set version = "1.2.2" %}
+{% set version = "1.3.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "8c0127909dd47afea790dc5cb8b1e67aa0a39e1b734718201df03787cab73b4c" %}
+{% set hash_val = "ef2bb3bc64aff3411866c428012239bbb9a18caa435236bf9f6cf0242461ca4d" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +27,7 @@ requirements:
 
   run:
     - python
-    - twisted >=10.0.0  # [not win]
+    - twisted >=13.1.0  # [not win]
     - twisted >=16.4.0  # [win]
     - w3lib >=1.15.0
     - queuelib
