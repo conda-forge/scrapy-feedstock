@@ -13,6 +13,18 @@ Scrapy is an open source and collaborative framework for extracting the
 data you need from websites in a fast, simple, yet extensible way.
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/scrapy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/scrapy-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/scrapy-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/scrapy-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/scrapy-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/scrapy-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/version.svg)](https://anaconda.org/conda-forge/scrapy)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/downloads.svg)](https://anaconda.org/conda-forge/scrapy)
+
 Installing scrapy
 =================
 
@@ -33,7 +45,6 @@ It is possible to list all of the versions of `scrapy` available on your platfor
 ```
 conda search scrapy --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -69,18 +80,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/scrapy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/scrapy-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/scrapy-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/scrapy-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/scrapy-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/scrapy-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/version.svg)](https://anaconda.org/conda-forge/scrapy)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/downloads.svg)](https://anaconda.org/conda-forge/scrapy)
 
 
 Updating scrapy-feedstock
