@@ -16,7 +16,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - scrapy = scrapy.cmdline:execute
-  number: 0
+  number: 1
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
