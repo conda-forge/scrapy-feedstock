@@ -1,3 +1,7 @@
+#
+# See the guidelines for updating this recipe for new releases:
+# https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
+#
 {% set name = "Scrapy" %}
 {% set version = "1.3.2" %}
 {% set hash_type = "sha256" %}
