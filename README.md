@@ -103,16 +103,3 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string)
    back to 0.
-
-Checklist for new releases:
-
-1. Update the ``version`` string.
-2. Update the ``sha256sum`` of the [pypi release
-   tarball](https://pypi.python.org/pypi/Scrapy). This can be done by
-   downloading the tarball from pypi and compute the ``sha256sum``.
-3. Reset the ``build/number`` to ``0``. This number is only increased when we
-  re-build a package with no version change.
-4. Update requirements if needed. This can be done by checking the ``setup.py``
-   changes between releases.
-5. Do a test build locally to ensure everything is OK.
-6. Create a branch in your fork and submit the PR.
