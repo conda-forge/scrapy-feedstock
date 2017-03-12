@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "5a907c7b7c8046170dc6811f031a9a90f6b55086f0d6063559aadb4d4acc0554" %}
+{% set hash_val = "7a91d3d7b1c05c2b972115b8966572d52b2520360d0c34c81bd6a627672a7849" %}
 
 package:
   name: {{ name|lower }}
@@ -84,14 +84,14 @@ test:
     - scrapy bench
 
 about:
-  home: http://scrapy.org/
+  home: https://scrapy.org/
   license: BSD 3-Clauses
   license_file: LICENSE
   summary: A high-level Python Screen Scraping framework
   description: |
     Scrapy is an open source and collaborative framework for extracting the
     data you need from websites in a fast, simple, yet extensible way.
-  doc_url: http://scrapy.org/doc/
+  doc_url: https://docs.scrapy.org
   dev_url: https://github.com/scrapy/scrapy
 
 extra:
