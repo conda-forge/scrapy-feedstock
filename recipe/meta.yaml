@@ -20,7 +20,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - scrapy = scrapy.cmdline:execute
-  number: 0
+  number: 1
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
@@ -51,12 +51,11 @@ test:
     - scrapy.contracts
     - scrapy.contrib
     - scrapy.contrib.downloadermiddleware
-    - scrapy.contrib.exporter
-    - scrapy.contrib.linkextractors
-    - scrapy.contrib.loader
-    - scrapy.contrib.pipeline
+    - scrapy.exporters
+    - scrapy.linkextractors
+    - scrapy.loader
+    - scrapy.pipelines
     - scrapy.contrib.spidermiddleware
-    - scrapy.contrib.spiders
     - scrapy.contrib_exp
     - scrapy.contrib_exp.downloadermiddleware
     - scrapy.core
@@ -76,7 +75,6 @@ test:
     - scrapy.spiders
     - scrapy.utils
     - scrapy.xlib
-    - scrapy.xlib.tx
 
   commands:
     # Ideally, we will run tests here but we require to provide the tests
