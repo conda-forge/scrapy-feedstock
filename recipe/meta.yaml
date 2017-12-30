@@ -31,6 +31,7 @@ requirements:
 
   run:
     - python
+    - setuptools
     - twisted >=13.1.0  # [not win]
     - twisted >=16.4.0  # [win]
     - w3lib >=1.17.0
