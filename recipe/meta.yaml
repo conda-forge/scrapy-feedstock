@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "04a08f027eef5d271342a016439533c81ba46f14bfcf230fecf602e99beaf233" %}
+{% set hash_val = "31a0bf05d43198afaf3acfb9b4fb0c09c1d7d7ff641e58c66e36117f26c4b755" %}
 
 package:
   name: {{ name|lower }}
@@ -20,7 +20,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - scrapy = scrapy.cmdline:execute
-  number: 1
+  number: 0
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
