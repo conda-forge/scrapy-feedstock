@@ -16,14 +16,16 @@ data you need from websites in a fast, simple, yet extensible way.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/scrapy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/scrapy-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/scrapy-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/scrapy-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/scrapy-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/scrapy-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/scrapy-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/scrapy-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/scrapy-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/scrapy-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/scrapy-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/scrapy-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/version.svg)](https://anaconda.org/conda-forge/scrapy)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrapy/badges/downloads.svg)](https://anaconda.org/conda-forge/scrapy)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-scrapy-green.svg)](https://anaconda.org/conda-forge/scrapy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/scrapy.svg)](https://anaconda.org/conda-forge/scrapy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/scrapy.svg)](https://anaconda.org/conda-forge/scrapy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/scrapy.svg)](https://anaconda.org/conda-forge/scrapy) |
 
 Installing scrapy
 =================
