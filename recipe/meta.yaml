@@ -4,17 +4,15 @@
 #
 {% set name = "Scrapy" %}
 {% set version = "1.6.0" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "558dfd10ac53cb324ecd7eefd3eac412161c7507c082b01b0bcd2c6e2e9f0766" %}
+{% set sha256 = "558dfd10ac53cb324ecd7eefd3eac412161c7507c082b01b0bcd2c6e2e9f0766" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  sha256: {{ sha256 }}
 
 build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
