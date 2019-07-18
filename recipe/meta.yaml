@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.5.2" %}
+{% set version = "1.7.2" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "005933cc426b8ff7eae84ef8b9370f6465f9e43c4daede68474711b5e21fe607" %}
+{% set hash_val = "7a4ed68cfb44dc86e1895f0fb46257ee4adb1090754ac21faec205763f054464" %}
 
 package:
   name: {{ name|lower }}
@@ -17,22 +17,22 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  script: python setup.py install --single-version-externally-managed --record=record.txt
-  entry_points:
-    - scrapy = scrapy.cmdline:execute
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   number: 0
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
 requirements:
-  build:
+  host:
     - python
+    - pip
     - setuptools
 
   run:
     - python
     - setuptools
-    - twisted >=13.1.0  # [not win]
+    - twisted >=13.1.0  # [not py34 and not win]
+    - twisted >=13.1.0,<=19.2.0  # [py34 and not win]
     - twisted >=16.4.0  # [win]
     - w3lib >=1.17.0
     - queuelib
@@ -40,47 +40,32 @@ requirements:
     - pyopenssl
     - cssselect >=0.9
     - six >=1.5.2
-    - parsel >=1.1.0
+    - parsel >=1.5.0
     - pydispatcher >=2.0.5
     - service_identity
     - pywin32  # [win]
 
 test:
-  imports:
+  requires:
+    - {{ compiler('c') }}
+    - {{ compiler("cxx") }}
+    - brotlipy  # [win]
+    - pip
+  source_files:
+    - conftest.py
+    - requirements-py2.txt
+    - requirements-py3.txt
     - scrapy
-    - scrapy.commands
-    - scrapy.contracts
-    - scrapy.contrib
-    - scrapy.contrib.downloadermiddleware
-    - scrapy.exporters
-    - scrapy.linkextractors
-    - scrapy.loader
-    - scrapy.pipelines
-    - scrapy.contrib.spidermiddleware
-    - scrapy.contrib_exp
-    - scrapy.contrib_exp.downloadermiddleware
-    - scrapy.core
-    - scrapy.core.downloader
-    - scrapy.core.downloader.handlers
-    - scrapy.downloadermiddlewares
-    - scrapy.extensions
-    - scrapy.http
-    - scrapy.http.request
-    - scrapy.http.response
-    - scrapy.linkextractors
-    - scrapy.loader
-    - scrapy.pipelines
-    - scrapy.selector
-    - scrapy.settings
-    - scrapy.spidermiddlewares
-    - scrapy.spiders
-    - scrapy.utils
-    - scrapy.xlib
-
+    - tests
   commands:
-    # Ideally, we will run tests here but we require to provide the tests
-    # requirements first.
-    - scrapy bench
+    - scrapy version  # [not win]
+    - sed -i '/brotlipy/d' tests/requirements-py2.txt  # [win]
+    - pip install -ctests/constraints.txt -rrequirements-py2.txt botocore google-cloud-storage Pillow!=3.0.0 -rtests/requirements-py2.txt  # [py27]
+    - pip install -ctests/constraints.txt -rrequirements-py3.txt Pillow -rtests/requirements-py3.txt  # [py3k]
+    - mv scrapy _scrapy
+    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
+    - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
+    - pytest _scrapy tests
 
 about:
   home: https://scrapy.org/
