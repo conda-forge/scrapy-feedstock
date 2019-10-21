@@ -62,9 +62,8 @@ test:
     - scrapy version  # [not win]
     - sed -i '/brotlipy/d' tests/requirements-py2.txt  # [win]
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
-    - pip install -ctests/constraints.txt
-    - pip install -rrequirements-py2.txt -rtests/requirements-py2.txt Pillow!=3.0.0 botocore google-cloud-storage  # [py27]
-    - pip install -rrequirements-py3.txt -rtests/requirements-py3.txt Pillow  # [py3k]
+    - pip install -ctests/constraints.txt -rrequirements-py2.txt -rtests/requirements-py2.txt Pillow!=3.0.0 botocore google-cloud-storage  # [py27]
+    - pip install -ctests/constraints.txt -rrequirements-py3.txt -rtests/requirements-py3.txt Pillow  # [py3k]
     - mv scrapy _scrapy
     - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
