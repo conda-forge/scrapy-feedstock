@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.7.4" %}
+{% set version = "1.8.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "f0813d23a3f5659f403f469b11488ecd81e989e834205c4366cd231536496513" %}
+{% set hash_val = "fe06576f9a4971de9dc0175c60fd92561e8275f2bad585c1cb5d65c5181b2db0" %}
 
 package:
   name: {{ name|lower }}
@@ -63,7 +63,7 @@ test:
     - sed -i '/brotlipy/d' tests/requirements-py2.txt  # [win]
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
     - pip install -ctests/constraints.txt -rrequirements-py2.txt -rtests/requirements-py2.txt Pillow!=3.0.0 botocore google-cloud-storage  # [py27]
-    - pip install -ctests/constraints.txt -rrequirements-py3.txt -rtests/requirements-py3.txt Pillow  # [py3k]
+    - pip install -ctests/constraints.txt -rrequirements-py3.txt -rtests/requirements-py3.txt Pillow botocore google-cloud-storage  # [py3k]
     - mv scrapy _scrapy
     - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
