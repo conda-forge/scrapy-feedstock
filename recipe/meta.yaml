@@ -37,6 +37,7 @@ requirements:
     - queuelib
     - lxml
     - pyopenssl
+    - cryptography >=2
     - cssselect >=0.9
     - parsel >=1.5.0
     - pydispatcher >=2.0.5
@@ -57,7 +58,6 @@ test:
     - pytest
     - testfixtures
     # indirect dependencies, to avoid compilation:
-    - cryptography <2.5,>=2.1.4
     - zstandard <0.13.0,>=0.11.0
   source_files:
     - conftest.py
