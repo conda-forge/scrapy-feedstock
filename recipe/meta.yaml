@@ -42,6 +42,7 @@ requirements:
     - pydispatcher >=2.0.5
     - service_identity
     - pywin32  # [win]
+    - protego
 
 test:
   requires:
