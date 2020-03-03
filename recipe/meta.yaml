@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.8.0" %}
+{% set version = "2.0.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "fe06576f9a4971de9dc0175c60fd92561e8275f2bad585c1cb5d65c5181b2db0" %}
+{% set hash_val = "bf1bad45e2b664b50c6b04a414ca96c739279ba5a14d685ba90904af8427d9f1" %}
 
 package:
   name: {{ name|lower }}
@@ -24,27 +24,24 @@ build:
 # version (check setup.py for changes).
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
     - setuptools
 
   run:
-    - python
+    - python >=3.5
     - setuptools
-    - twisted >=13.1.0  # [not py34 and not win]
-    - twisted >=13.1.0,<=19.2.0  # [py34 and not win]
-    - twisted >=16.4.0  # [win]
+    - twisted >=17.9.0
     - w3lib >=1.17.0
     - queuelib
-    - lxml  # [not py34]
-    - lxml <=4.3.5  # [py34]
+    - lxml
     - pyopenssl
     - cssselect >=0.9
-    - six >=1.5.2
     - parsel >=1.5.0
     - pydispatcher >=2.0.5
     - service_identity
     - pywin32  # [win]
+    - protego
 
 test:
   requires:
@@ -54,16 +51,12 @@ test:
     - pip
   source_files:
     - conftest.py
-    - requirements-py2.txt
-    - requirements-py3.txt
     - scrapy
     - tests
   commands:
     - scrapy version  # [not win]
-    - sed -i '/brotlipy/d' tests/requirements-py2.txt  # [win]
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
-    - pip install -ctests/constraints.txt -rrequirements-py2.txt -rtests/requirements-py2.txt Pillow!=3.0.0 botocore google-cloud-storage  # [py27]
-    - pip install -ctests/constraints.txt -rrequirements-py3.txt -rtests/requirements-py3.txt Pillow botocore google-cloud-storage  # [py3k]
+    - pip install -ctests/constraints.txt -rtests/requirements-py3.txt Pillow botocore google-cloud-storage
     - mv scrapy _scrapy
     - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
