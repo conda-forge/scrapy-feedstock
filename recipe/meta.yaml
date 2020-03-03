@@ -48,8 +48,17 @@ test:
   requires:
     - {{ compiler('c') }}
     - {{ compiler("cxx") }}
-    - brotlipy  # [win]
+    - botocore
+    - brotlipy
+    - bpython
+    - ipython
+    - google-cloud-storage
     - pip
+    - jmespath
+    - pillow
+    - pytest
+    - pytest-twisted
+    - testfixtures
   source_files:
     - conftest.py
     - scrapy
@@ -57,7 +66,7 @@ test:
   commands:
     - scrapy version  # [not win]
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
-    - pip install -ctests/constraints.txt -rtests/requirements-py3.txt Pillow botocore google-cloud-storage
+    - pip install mitmproxy sybil # required from tests/requirements-py3.txt unavailable on conda
     - mv scrapy _scrapy
     - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
