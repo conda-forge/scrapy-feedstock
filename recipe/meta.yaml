@@ -24,12 +24,12 @@ build:
 # version (check setup.py for changes).
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
     - setuptools
 
   run:
-    - python >=3.5
+    - python
     - setuptools
     - twisted >=17.9.0
     - w3lib >=1.17.0
