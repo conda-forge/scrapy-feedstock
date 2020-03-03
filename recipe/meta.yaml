@@ -56,7 +56,9 @@ test:
     - pillow
     - pytest
     - testfixtures
-    - zstandard <0.13.0,>=0.11.0  # indirect dependency, to avoid compilation
+    # indirect dependencies, to avoid compilation:
+    - cryptography <2.5,>=2.1.4
+    - zstandard <0.13.0,>=0.11.0
   source_files:
     - conftest.py
     - scrapy
@@ -67,7 +69,7 @@ test:
     - pip install mitmproxy pytest-twisted sybil # required from tests/requirements-py3.txt unavailable on conda
     - mv scrapy _scrapy
     - rm tests/test_proxy_connect.py  # [win or py==38]
-    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py  # [win]
+    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawl.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
     - pytest _scrapy tests
 
