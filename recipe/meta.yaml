@@ -56,7 +56,7 @@ test:
     - pillow
     - pytest
     - testfixtures
-    - zstandard  # indirect dependency, to avoid compilation
+    - zstandard <0.13.0,>=0.11.0  # indirect dependency, to avoid compilation
   source_files:
     - conftest.py
     - scrapy
