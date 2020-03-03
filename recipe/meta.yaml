@@ -19,6 +19,7 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   number: 0
+  skip: True  # [py2k]
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
