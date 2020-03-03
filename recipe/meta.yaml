@@ -48,7 +48,7 @@ test:
   requires:
     - botocore
     - brotlipy
-    - bpython
+    - bpython  # [not win]
     - ipython
     - google-cloud-storage
     - pip
@@ -66,7 +66,8 @@ test:
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
     - pip install mitmproxy pytest-twisted sybil # required from tests/requirements-py3.txt unavailable on conda
     - mv scrapy _scrapy
-    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_proxy_connect.py tests/test_utils_trackref.py  # [win]
+    - rm tests/test_proxy_connect.py  # [win or py38]
+    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py  # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
     - pytest _scrapy tests
 
