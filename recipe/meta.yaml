@@ -38,7 +38,6 @@ requirements:
     - lxml
     - pyopenssl
     - cryptography >=2  # [not win or not py==38]
-    - cryptography <2.5,>=2.1.4  # [win and py==38]
     - cssselect >=0.9
     - parsel >=1.5.0
     - pydispatcher >=2.0.5
