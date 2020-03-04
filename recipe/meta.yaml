@@ -59,6 +59,8 @@ test:
     - testfixtures
     # indirect dependencies, to avoid compilation:
     - zstandard <0.13.0,>=0.11.0
+    # indirect dependencies, needed for compilation
+    - openssl  # [win and py==38]
   source_files:
     - conftest.py
     - scrapy
