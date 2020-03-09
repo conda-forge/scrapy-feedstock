@@ -58,9 +58,9 @@ test:
     - pytest
     - testfixtures
     # indirect dependencies, to avoid compilation:
-    - cryptography <2.5,>=2.1.4
-    - pyopenssl <19.1.0
-    - zstandard <0.13.0,>=0.11.0
+    - cryptography = 2.4
+    - pyopenssl =19.0
+    - zstandard =0.12
   source_files:
     - conftest.py
     - scrapy
