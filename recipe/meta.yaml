@@ -36,14 +36,18 @@ requirements:
     - w3lib >=1.17.0
     - queuelib
     - lxml
-    - pyopenssl
-    - cryptography >=2
+    #- cryptography >=2
     - cssselect >=0.9
     - parsel >=1.5.0
     - pydispatcher >=2.0.5
     - service_identity
     - pywin32  # [win]
     - protego
+
+    # Test restrictions, to avoid conflicts
+    - cryptography <2.5,>=2.1.4
+    - pyopenssl <19.1.0
+    - zstandard <0.13.0,>=0.11.0
 
 test:
   requires:
@@ -57,10 +61,6 @@ test:
     - pillow
     - pytest
     - testfixtures
-    # indirect dependencies, to avoid compilation:
-    - cryptography = 2.4
-    - pyopenssl =19.0
-    - zstandard =0.12
   source_files:
     - conftest.py
     - scrapy
