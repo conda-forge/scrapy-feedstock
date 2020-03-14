@@ -46,6 +46,8 @@ requirements:
 
 test:
   requires:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - botocore
     - brotlipy
     - bpython  # [not win]
@@ -56,8 +58,6 @@ test:
     - pillow
     - pytest
     - testfixtures
-    # indirect dependencies, to avoid compilation
-    - zstandard<0.13.0,>=0.11.0
   source_files:
     - conftest.py
     - scrapy
