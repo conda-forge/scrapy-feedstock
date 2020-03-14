@@ -44,10 +44,8 @@ requirements:
     - pywin32  # [win]
     - protego
 
-test:
+test:  # [not win]
   requires:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - botocore
     - brotlipy
     - bpython  # [not win]
