@@ -54,10 +54,10 @@ test:  # [not win]
     - pip
     - jmespath
     - pillow
-    - pytest
+    - pytest < 5.4
     - testfixtures
     # indirect dependencies, to avoid compilation
-    - zstandard<0.13.0,>=0.11.0
+    - zstandard <0.13.0, >=0.11.0
   source_files:
     - conftest.py
     - scrapy
