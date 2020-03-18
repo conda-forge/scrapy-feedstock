@@ -3,9 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.0.0" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "bf1bad45e2b664b50c6b04a414ca96c739279ba5a14d685ba90904af8427d9f1" %}
+{% set version = "2.0.1" %}
+{% set hash_val = "85581a01f4160a103ca9906ffa4e44474f4ecd1685f0934728892c58ebf111f6" %}
 
 package:
   name: {{ name|lower }}
@@ -14,12 +13,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  sha256: {{ hash_val }}
 
 build:
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   number: 0
-  skip: True  # [py2k]
+  skip: true  # [py2k]
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
@@ -44,7 +43,7 @@ requirements:
     - pywin32  # [win]
     - protego
 
-test:  # [not win]
+test:   # [not win]
   requires:
     - botocore
     - brotlipy
@@ -72,7 +71,8 @@ test:  # [not win]
     - rm tests/test_proxy_connect.py  # [win or py==38]
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm tests/test_utils_asyncio.py  # [win or py==38]
-    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawl.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py  # [win]
+    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawl.py tests/test_crawler.py tests/test_downloader_handlers.py
+      tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py                                                                                                                                                                # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
     - pytest _scrapy tests
 
