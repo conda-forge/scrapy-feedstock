@@ -70,9 +70,7 @@ test:   # [not win]
     - mv scrapy _scrapy
     - rm tests/test_proxy_connect.py  # [win or py==38]
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
-    - rm tests/test_utils_asyncio.py  # [win or py==38]
-    - rm tests/test_command_parse.py tests/test_command_shell.py tests/test_commands.py tests/test_crawl.py tests/test_crawler.py tests/test_downloader_handlers.py
-      tests/test_exporters.py tests/test_feedexport.py tests/test_utils_trackref.py                                                                                                                                                                # [win]
+    - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
     - pytest _scrapy tests
 
