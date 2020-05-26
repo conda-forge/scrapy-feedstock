@@ -17,8 +17,10 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 0
+  number: 1
   skip: true  # [py2k]
+  entry_points:
+    - scrapy = scrapy.cmdline:execute
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
@@ -43,7 +45,7 @@ requirements:
     - pywin32  # [win]
     - protego
 
-test:   # [not win]
+test:
   requires:
     - botocore
     - brotlipy
@@ -62,7 +64,7 @@ test:   # [not win]
     - scrapy
     - tests
   commands:
-    - scrapy version  # [not win]
+    - scrapy version -v
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
     # required from tests/requirements-py3.txt unavailable on conda:
     - pip install mitmproxy pytest-twisted sybil  # [not win or not py==38]
@@ -72,7 +74,8 @@ test:   # [not win]
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]
     - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
-    - pytest _scrapy tests
+    # Tests need to be fixed in upstream.
+    - pytest _scrapy tests  # [not win]
 
 about:
   home: https://scrapy.org/
