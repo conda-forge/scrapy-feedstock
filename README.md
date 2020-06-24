@@ -202,7 +202,6 @@ Feedstock Maintainers
 * [@Gallaecio](https://github.com/Gallaecio/)
 * [@dangra](https://github.com/dangra/)
 * [@kmike](https://github.com/kmike/)
-* [@redapple](https://github.com/redapple/)
 * [@rmax](https://github.com/rmax/)
 * [@wRAR](https://github.com/wRAR/)
 
