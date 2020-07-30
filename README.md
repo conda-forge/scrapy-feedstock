@@ -3,9 +3,9 @@ About scrapy
 
 Home: https://scrapy.org/
 
-Package license: BSD 3-Clauses
+Package license: BSD-3-Clause-Clear
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A high-level Python Screen Scraping framework
 
