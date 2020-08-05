@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.2.1" %}
-{% set hash_val = "6a09beb5190bfdee2d72cf261822eae5d92fe8a86ac9ee1f55fc44b4864ca583" %}
+{% set version = "2.3.0" %}
+{% set hash_val = "b4d08cdacb615563c291d053ef1ba2dc08d9d4b6d81578684eaa1cf7b832f90c" %}
 
 package:
   name: {{ name|lower }}
@@ -39,6 +39,7 @@ requirements:
     - twisted >=17.9.0
     - cryptography >=2.0
     - cssselect >=0.9.1
+    - itemloaders >=1.0.1
     - lxml >=3.5.0
     - parsel >=1.5.0
     - pydispatcher >=2.0.5
