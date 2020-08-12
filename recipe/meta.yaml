@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 0
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -84,7 +84,7 @@ test:
     - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]
     - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
     # Tests need to be fixed in upstream.
-    - pytest _scrapy tests  # [not win]
+    - pytest _scrapy tests
 
 about:
   home: https://scrapy.org/
