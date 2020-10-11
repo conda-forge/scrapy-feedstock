@@ -5,9 +5,13 @@ Home: https://scrapy.org/
 
 Package license: BSD-3-Clause-Clear
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scrapy-feedstock/blob/master/LICENSE.txt)
 
 Summary: A high-level Python Screen Scraping framework
+
+Development: https://github.com/scrapy/scrapy
+
+Documentation: https://docs.scrapy.org
 
 Scrapy is an open source and collaborative framework for extracting the
 data you need from websites in a fast, simple, yet extensible way.
