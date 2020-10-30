@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 0
+  number: 2
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -86,7 +86,7 @@ test:
     # Test failures since Scrapy 2.4:
     - rm -f tests/test_crawler.py tests/test_feedexport.py
     # Tests need to be fixed in upstream.
-    - pytest _scrapy tests  # [not win]
+    - pytest _scrapy tests
 
 about:
   home: https://scrapy.org/
