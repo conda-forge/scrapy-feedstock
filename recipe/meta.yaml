@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 1
+  number: 2
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -74,11 +74,11 @@ test:
   commands:
     - scrapy version -v
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
-    # required from tests/requirements-py3.txt unavailable on conda:
-    - pip install mitmproxy pytest-twisted sybil  # [not win or not py==38]
-    - pip install pytest-twisted sybil  # [win and py==38]
+    # test requirements unavailable on conda:
+    - pip install pytest-twisted sybil
+    - pip install mitmproxy  # [py>=37]
+    - pip install 'mitmproxy>=4.0.4,<5'  # [py>=36 and py<37]
     - mv scrapy _scrapy
-    - rm tests/test_proxy_connect.py  # [win or py==38]
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]
     - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
