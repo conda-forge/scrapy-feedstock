@@ -80,11 +80,9 @@ test:
     - pip install 'mitmproxy>=4.0.4,<5'  # [py>=36 and py<37]
     - mv scrapy _scrapy
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
-    - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]
-    - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]
+    - rm tests/test_utils_asyncio.py  # [win or py==38]
     # Test failures since Scrapy 2.4:
     - rm -f tests/test_command_check.py tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_feedexport.py
-    # Tests need to be fixed in upstream.
     - pytest _scrapy tests
 
 about:
