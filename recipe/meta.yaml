@@ -84,6 +84,8 @@ test:
     - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_downloader_handlers_http2.py  # [osx]
     # Test failures since Scrapy 2.4:
     - rm -f tests/test_command_check.py tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_feedexport.py
+    # OpenSSL-related failures, https://github.com/scrapy/scrapy/issues/5085
+    - rm -f tests/test_http2_client_protocol.py tests/test_downloader_handlers_http2.py
     # Tests need to be fixed in upstream.
     - pytest _scrapy tests
 
