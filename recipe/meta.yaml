@@ -77,7 +77,7 @@ test:
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
     # test requirements unavailable on conda:
     - pip install sybil
-    - pip install mitmproxy  # [py>=37 and py <39]
+    - pip install 'mitmproxy<5.3.0' # [py>=37 and py <39]
     - mv scrapy _scrapy
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm tests/test_utils_asyncio.py  # [win or py==38]
