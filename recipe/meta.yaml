@@ -31,7 +31,7 @@ requirements:
     - setuptools
 
   run:
-    - python
+    - python <3.9 # https://github.com/scrapy/scrapy/issues/5195
     - setuptools
     - pywin32  # [win]
 
