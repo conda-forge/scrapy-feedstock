@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "fe06576f9a4971de9dc0175c60fd92561e8275f2bad585c1cb5d65c5181b2db0" %}
+{% set hash_val = "26ac0e5044c2bf6082b2e263832fe6e0806ee4b3571b0b6d024f1c289bbe2c6d" %}
 
 package:
   name: {{ name|lower }}
@@ -31,11 +31,13 @@ requirements:
   run:
     - python
     - setuptools
-    - twisted >=13.1.0  # [not py34 and not win]
+    # >=21.2.0 causes https://github.com/scrapy/scrapy/issues/5020
+    - twisted >=13.1.0,<21.2.0  # [not py34 and not win]
     - twisted >=13.1.0,<=19.2.0  # [py34 and not win]
-    - twisted >=16.4.0  # [win]
+    - twisted >=16.4.0,<21.2.0  # [win]
     - w3lib >=1.17.0
-    - queuelib
+    # peek support breaks tests
+    - queuelib <1.6.0
     - lxml  # [not py34]
     - lxml <=4.3.5  # [py34]
     - pyopenssl
@@ -45,6 +47,8 @@ requirements:
     - pydispatcher >=2.0.5
     - service_identity
     - pywin32  # [win]
+    # >=5 requires https://github.com/scrapy/scrapy/commit/532cd1d93ed58f038346ca6b753462563c85b489
+    - zope.interface >=4.1.3,<5
 
 test:
   requires:
