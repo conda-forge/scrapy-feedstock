@@ -53,6 +53,8 @@ requirements:
     # deps of twisted[http2]
     - h2 >=3.0, <4.0
     - priority >=1.1.0, <2.0
+    # https://github.com/scrapy/scrapy/pull/5208
+    - libxml2 < 2.9.11
 
 test:
   requires:
