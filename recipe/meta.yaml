@@ -51,6 +51,8 @@ requirements:
     - itemadapter >=0.1.0
     - setuptools
     - tldextract
+    # https://github.com/scrapy/scrapy/pull/5208
+    - libxml2 <2.9.11
 
 test:
   requires:
