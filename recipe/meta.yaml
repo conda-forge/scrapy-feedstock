@@ -78,8 +78,13 @@ test:
     - pip install setuptools-scm  # required by indirect dependency pytest-forked
     # test requirements unavailable on conda:
     - pip install sybil
-    - pip install mitmproxy
-    - pip install markupsafe
+
+    # tests.test_proxy_connect on python 3.7 needs old mitmproxy and markupsafe.
+    - pip install mitmproxy  # [py>=38]
+    - pip install markupsafe  # [py>=38]
+    - pip install 'mitmproxy<5.3.0'  # [py==37]
+    - pip install 'markupsafe<2.1.0'  # [py==37]
+
     - mv scrapy _scrapy
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm tests/test_utils_asyncio.py  # [win and py==38]
