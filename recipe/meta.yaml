@@ -80,8 +80,8 @@ test:
     - pip install sybil
 
     # tests.test_proxy_connect on python 3.7 needs old mitmproxy and markupsafe.
-    - pip install mitmproxy<8  # [py>=37]
-    - pip install mitmproxy<5  # [py<37]
+    - pip install 'mitmproxy<8'  # [py>=37]
+    - pip install 'mitmproxy<5'  # [py<37]
     - pip install 'markupsafe<2.1.0'  # [py<=37]
 
     - mv scrapy _scrapy
