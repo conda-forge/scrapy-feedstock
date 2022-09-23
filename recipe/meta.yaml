@@ -25,6 +25,9 @@ build:
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
 requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - pip
