@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.6.2" %}
-{% set hash_val = "55e21181165f25337105fff1efc8393296375cea7de699a7e703bbd265595f26" %}
+{% set version = "2.6.3" %}
+{% set hash_val = "bdff1aaf3547c2e540436d3ab8680b21039327bd5d3a2ef89c34165992d3e5f3" %}
 
 package:
   name: {{ name|lower }}
