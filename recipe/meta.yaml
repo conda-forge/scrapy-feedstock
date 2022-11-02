@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.7.0" %}
-{% set hash_val = "4acbe0f1f5fb5ea91353512b8958ed304bc25f6dfbde2839a0d87a49435158b9" %}
+{% set version = "2.7.1" %}
+{% set hash_val = "30fa408353d24b1df979df2ea4afbd19b4ae02fb2207f218d246332f1e1cf14e" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 1
+  number: 0
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -60,9 +60,9 @@ test:
   requires:
     - attrs
     - botocore
-    - brotlipy
+    - brotli
     - bpython  # [not win]
-    - dataclasses  # [py!=35]
+    - dataclasses
     - ipython
     - google-cloud-storage
     - pip
