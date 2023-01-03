@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 0
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -46,7 +46,7 @@ requirements:
     - pyOpenSSL >=21.0.0
     - queuelib >=1.4.2
     - service_identity >=18.1.0
-    - w3lib >=1.17.0
+    - w3lib >=1.17.0, <2.1.0  # https://github.com/scrapy/scrapy/issues/5750
     - zope.interface >=5.1.0
     - protego >=0.1.15
     - itemadapter >=0.1.0
@@ -71,6 +71,7 @@ test:
     - pytest
     - testfixtures
     - priority >=1.1.0, <2.0
+    - pygments <2.14  # https://github.com/scrapy/scrapy/pull/5783
   source_files:
     - conftest.py
     - scrapy
