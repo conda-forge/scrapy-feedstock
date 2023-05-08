@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.8.0" %}
-{% set hash_val = "8071ac6c65f185ec2c76fe8509f94d99fea080519fdc206f908a920d5e05fe43" %}
+{% set version = "2.9.0" %}
+{% set hash_val = "564c972b56e54b83141f395ce3f6a25bfe2093d61d13f9b81d05384e19db98da" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 1
+  number: 0
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
