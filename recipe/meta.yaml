@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.9.0" %}
-{% set hash_val = "564c972b56e54b83141f395ce3f6a25bfe2093d61d13f9b81d05384e19db98da" %}
+{% set version = "2.10.0" %}
+{% set hash_val = "4e16a33fc8c03a58bdf4e8d4bdca1f867354eac69ccf573658c7ff34fa0cae39" %}
 
 package:
   name: {{ name|lower }}
@@ -39,7 +39,7 @@ requirements:
 
     # Same order as setup.py:
     - twisted >=18.9.0
-    - cryptography >=3.4.6
+    - cryptography >=36.0.0
     - cssselect >=0.9.1
     - itemloaders >=1.0.1
     - parsel >=1.5.0
@@ -53,7 +53,7 @@ requirements:
     - setuptools
     - packaging
     - tldextract
-    - lxml >=4.3.0
+    - lxml >=4.4.1
     - pydispatcher >=2.0.5
 
 test:
