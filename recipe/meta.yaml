@@ -38,7 +38,7 @@ requirements:
     - pywin32  # [win]
 
     # Same order as setup.py:
-    - twisted >=18.9.0, <23.8.0
+    - twisted >=18.9.0
     - cryptography >=36.0.0
     - cssselect >=0.9.1
     - itemloaders >=1.0.1
