@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 1
+  number: 2
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
