@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.11.1" %}
-{% set hash_val = "733a039c7423e52b69bf2810b5332093d4e42a848460359c07b02ecff8f73ebe" %}
+{% set version = "2.11.2" %}
+{% set hash_val = "dfbd565384fc3fffeba121f5a3a2d0899ac1f756d41432ca0879933fbfb3401d" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 2
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -54,6 +54,7 @@ requirements:
     - packaging
     - tldextract
     - lxml >=4.4.1
+    - defusedxml >=0.7.1
     - pydispatcher >=2.0.5
 
 test:
