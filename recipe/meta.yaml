@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.11.2" %}
-{% set sha256 = "dfbd565384fc3fffeba121f5a3a2d0899ac1f756d41432ca0879933fbfb3401d" %}
-{% set blake2b256 = "f21f5524416a64c030fbe18caeba079e7176836b281bf9eb50b79efdf8015063" %}
+{% set version = "2.12.0" %}
+{% set sha256 = "d66d6e76009b12447604196875a463b61d10721140032a8084a0a52df7f4788f" %}
+{% set blake2b256 = "f852b0f4ded03c5966e7e90c607bb9aa7e3c5b228cb1d7051325fde017c46987" %}
 
 package:
   name: {{ name|lower }}
@@ -39,22 +39,21 @@ requirements:
     - pywin32  # [win]
 
     # Same order as setup.py:
-    - twisted >=18.9.0
-    - cryptography >=36.0.0
+    - twisted >=21.7.0
+    - cryptography >=37.0.0
     - cssselect >=0.9.1
     - itemloaders >=1.0.1
     - parsel >=1.5.0
-    - pyOpenSSL >=21.0.0
+    - pyOpenSSL >=22.0.0
     - queuelib >=1.4.2
     - service_identity >=18.1.0
     - w3lib >=1.17.0
     - zope.interface >=5.1.0
     - protego >=0.1.15
     - itemadapter >=0.1.0
-    - setuptools
     - packaging
     - tldextract
-    - lxml >=4.4.1
+    - lxml >=4.6.0
     - defusedxml >=0.7.1
     - pydispatcher >=2.0.5
 
@@ -69,6 +68,7 @@ test:
     - google-cloud-storage
     - pip
     - jmespath
+    - pexpect
     - pillow
     - pytest
     - testfixtures
@@ -85,7 +85,6 @@ test:
 
     - mv scrapy _scrapy
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
-    - rm tests/test_utils_asyncio.py  # [win and py==38]
     - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_downloader_handlers_http2.py  # [osx]
     # Test failures since Scrapy 2.4:
     - rm -f tests/test_command_check.py tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_feedexport.py
