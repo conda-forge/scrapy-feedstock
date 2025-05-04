@@ -344,6 +344,3 @@ Feedstock Maintainers
 * [@rmax](https://github.com/rmax/)
 * [@wRAR](https://github.com/wRAR/)
 
-
-<!-- dummy commit to enable rerendering -->
-
