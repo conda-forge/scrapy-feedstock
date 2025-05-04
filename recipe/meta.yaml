@@ -71,17 +71,15 @@ test:
     - pillow
     - pytest
     - testfixtures
-    - priority >=1.1.0, <2.0
+    - priority >=1.1.0,<2.0
+    - sybil
+    - setuptools-scm   # required indirectly by pytest-forked
   source_files:
     - conftest.py
     - scrapy
     - tests
   commands:
     - scrapy version -v
-    - pip install setuptools-scm  # required by indirect dependency pytest-forked
-    # test requirements unavailable on conda:
-    - pip install sybil
-
     - mv scrapy _scrapy
     # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
     - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_downloader_handlers_http2.py  # [osx]
