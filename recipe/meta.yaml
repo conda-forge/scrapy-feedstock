@@ -18,25 +18,23 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 1
-  skip: true  # [py2k]
+  number: 2
+  noarch: true
   entry_points:
     - scrapy = scrapy.cmdline:execute
 
 # The requirements below shall match the requirements from the target package
 # version (check setup.py for changes).
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
 
   run:
-    - python
-    - pywin32  # [win]
+    - python >={{ python_min }}
+    # pywin32 exists for unix as a noop package
+    - pywin32
 
     # Same order as setup.py:
     - twisted >=21.7.0
@@ -59,6 +57,7 @@ requirements:
 
 test:
   requires:
+    - python {{ python_min }}
     - attrs
     - botocore
     - brotli
