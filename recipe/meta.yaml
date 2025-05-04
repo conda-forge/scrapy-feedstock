@@ -19,7 +19,7 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   number: 2
-  noarch: true
+  noarch: python
   entry_points:
     - scrapy = scrapy.cmdline:execute
 
