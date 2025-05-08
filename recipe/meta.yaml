@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.12.0" %}
-{% set sha256 = "d66d6e76009b12447604196875a463b61d10721140032a8084a0a52df7f4788f" %}
-{% set blake2b256 = "f852b0f4ded03c5966e7e90c607bb9aa7e3c5b228cb1d7051325fde017c46987" %}
+{% set version = "2.13.0" %}
+{% set sha256 = "9661629805ff0e43054cc1306d9b13236c6bb9565d8d8e303a332c8da045d90f" %}
+{% set blake2b256 = "8adb6acda5c8c407dbb1a210a7a9732f86ed7eacb22bd500b589a13716e634cb" %}
 
 package:
   name: {{ name|lower }}
@@ -18,7 +18,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 2
+  number: 0
   noarch: python
   entry_points:
     - scrapy = scrapy.cmdline:execute
@@ -29,7 +29,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
 
   run:
     - python >={{ python_min }}
