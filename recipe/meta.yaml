@@ -65,6 +65,7 @@ test:
     - dataclasses
     - ipython
     - google-cloud-storage
+    - mitmproxy
     - pip
     - jmespath
     - pexpect
