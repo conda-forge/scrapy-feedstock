@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.13.0" %}
-{% set sha256 = "9661629805ff0e43054cc1306d9b13236c6bb9565d8d8e303a332c8da045d90f" %}
-{% set blake2b256 = "8adb6acda5c8c407dbb1a210a7a9732f86ed7eacb22bd500b589a13716e634cb" %}
+{% set version = "2.13.2" %}
+{% set sha256 = "19d984e82847ab08efa150dc329fa615c71f8e99bb97fd97a64a5c29e9a2d5d7" %}
+{% set blake2b256 = "a750c0cf8ac73fd3f642c5aa6eb2c317eaf0132637b451d90db8041bb65cb9ca" %}
 
 package:
   name: {{ name|lower }}
@@ -65,6 +65,7 @@ test:
     - dataclasses
     - ipython
     - google-cloud-storage
+    - mitmproxy
     - pip
     - jmespath
     - pexpect
