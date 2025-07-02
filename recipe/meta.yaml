@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.13.2" %}
-{% set sha256 = "19d984e82847ab08efa150dc329fa615c71f8e99bb97fd97a64a5c29e9a2d5d7" %}
-{% set blake2b256 = "a750c0cf8ac73fd3f642c5aa6eb2c317eaf0132637b451d90db8041bb65cb9ca" %}
+{% set version = "2.13.3" %}
+{% set sha256 = "bf17588c10e46a9d70c49a05380b749e3c7fba58204a367a5747ce6da2bd204d" %}
+{% set blake2b256 = "be6cbab0c01c5c50842548f0b5e936dfd2520a1ce84c171472c2cfe4d0599841" %}
 
 package:
   name: {{ name|lower }}
@@ -70,7 +70,7 @@ test:
     - jmespath
     - pexpect
     - pillow
-    - pytest
+    - pytest >=8.4.1
     - testfixtures
     - priority >=1.1.0,<2.0
     - sybil
