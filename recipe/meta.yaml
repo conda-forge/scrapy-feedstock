@@ -3,9 +3,9 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.13.3" %}
-{% set sha256 = "bf17588c10e46a9d70c49a05380b749e3c7fba58204a367a5747ce6da2bd204d" %}
-{% set blake2b256 = "be6cbab0c01c5c50842548f0b5e936dfd2520a1ce84c171472c2cfe4d0599841" %}
+{% set version = "2.13.4" %}
+{% set sha256 = "9bf36700aefa4983cc48b2cb0e1564161a340e19f73862778e2ed44ec5bbde6a" %}
+{% set blake2b256 = "17233a35660c44bd7c116a83ddd23f99a1add46276b15ca7103492a73d5fdf4f" %}
 
 package:
   name: {{ name|lower }}
@@ -40,19 +40,19 @@ requirements:
     - twisted >=21.7.0
     - cryptography >=37.0.0
     - cssselect >=0.9.1
+    - defusedxml >=0.7.1
+    - itemadapter >=0.1.0
     - itemloaders >=1.0.1
+    - lxml >=4.6.0
+    - packaging
     - parsel >=1.5.0
+    - protego >=0.1.15
     - pyOpenSSL >=22.0.0
     - queuelib >=1.4.2
     - service_identity >=18.1.0
+    - tldextract
     - w3lib >=1.17.0
     - zope.interface >=5.1.0
-    - protego >=0.1.15
-    - itemadapter >=0.1.0
-    - packaging
-    - tldextract
-    - lxml >=4.6.0
-    - defusedxml >=0.7.1
     - pydispatcher >=2.0.5
 
 test:
@@ -60,12 +60,10 @@ test:
     - python {{ python_min }}
     - attrs
     - botocore
-    - brotli
+    - brotli >=1.2.0
     - bpython  # [not win]
-    - dataclasses
     - ipython
     - google-cloud-storage
-    - mitmproxy
     - pip
     - jmespath
     - pexpect
