@@ -4,8 +4,8 @@
 #
 {% set name = "Scrapy" %}
 {% set version = "2.13.4" %}
-{% set sha256 = "9bf36700aefa4983cc48b2cb0e1564161a340e19f73862778e2ed44ec5bbde6a" %}
-{% set blake2b256 = "17233a35660c44bd7c116a83ddd23f99a1add46276b15ca7103492a73d5fdf4f" %}
+{% set sha256 = "e09bce40c56b56f9f86b0d078a0e5cdd08283c83076170ce7a8eec7189ac2493" %}
+{% set blake2b256 = "08ef827db21986672723741ef1c384f4e5a09b0a552936ae638b6426e71d3a6e" %}
 
 package:
   name: {{ name|lower }}
