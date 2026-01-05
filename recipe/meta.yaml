@@ -68,6 +68,7 @@ test:
     - jmespath
     - pexpect
     - pillow
+    - pyftpdlib
     - pytest >=8.4.1
     - pytest-twisted
     - testfixtures
