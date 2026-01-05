@@ -76,6 +76,7 @@ test:
     - setuptools-scm   # required indirectly by pytest-forked
   source_files:
     - conftest.py
+    - pyproject.toml
     - scrapy
     - tests
   commands:
