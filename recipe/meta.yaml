@@ -83,20 +83,6 @@ test:
   commands:
     - scrapy version -v
     - mv scrapy _scrapy
-#    # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517
-#    - rm -f tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py tests/test_downloader_handlers_http2.py  # [osx]
-#    # Test failures since Scrapy 2.4:
-#    - rm -f tests/test_command_check.py tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_feedexport.py
-#    # test_convert_image fails because expected vs actual color does not match
-#    # by 1 bit (#0079FF vs #0080FF)
-#    - rm -f tests/test_pipeline_images.py
-#    # MediaPipelineDeprecatedMethodsTestCase leaves files that interfere with its tests
-#    - rm -f tests/test_pipeline_media.py
-#    # The removed tests/test_pipeline_media.py file is a dependency
-#    - rm -f tests/test_pipeline_files.py
-#    # Started failing in 2.11.1
-#    - rm -f tests/test_command_shell.py
-#    # Tests need to be fixed in upstream.
     - pytest _scrapy tests
 
 about:
