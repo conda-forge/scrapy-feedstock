@@ -69,6 +69,7 @@ test:
     - pexpect
     - pillow
     - pytest >=8.4.1
+    - pytest-twisted
     - testfixtures
     - priority >=1.1.0,<2.0
     - sybil
