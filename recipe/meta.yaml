@@ -61,6 +61,7 @@ test:
     - botocore
     - brotli >=1.2.0
     - bpython  # [not win]
+    - httpx
     - ipython
     - google-cloud-storage
     - pip
