@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.15.2" %}
-{% set sha256 = "c7b8fc8d2c51a39d52f6025bdd7e9c714e43f97afd300e8c44157cf7a05c0c9e" %}
+{% set version = "2.16.0" %}
+{% set sha256 = "7287952a81fa302797ec0c3370a0096a8d81d4f9fe25a608a76df2a164511714" %}
 
 package:
   name: {{ name|lower }}
@@ -36,7 +36,7 @@ requirements:
     - pywin32
 
     # Same order as setup.py:
-    - twisted >=21.7.0,<=25.5.0
+    - twisted >=21.7.0
     - cryptography >=37.0.0
     - cssselect >=0.9.1
     - defusedxml >=0.7.1
@@ -48,7 +48,7 @@ requirements:
     - protego >=0.1.15
     - pyOpenSSL >=22.0.0
     - queuelib >=1.4.2
-    - service_identity >=18.1.0
+    - service_identity >=23.1.0
     - tldextract
     - w3lib >=1.17.0
     - zope.interface >=5.1.0
