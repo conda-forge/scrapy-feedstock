@@ -36,7 +36,7 @@ requirements:
     - pywin32
 
     # Same order as setup.py:
-    - twisted >=21.7.0,<=25.5.0
+    - twisted >=21.7.0
     - cryptography >=37.0.0
     - cssselect >=0.9.1
     - defusedxml >=0.7.1
@@ -48,7 +48,7 @@ requirements:
     - protego >=0.1.15
     - pyOpenSSL >=22.0.0
     - queuelib >=1.4.2
-    - service_identity >=18.1.0
+    - service_identity >=23.1.0
     - tldextract
     - w3lib >=1.17.0
     - zope.interface >=5.1.0
