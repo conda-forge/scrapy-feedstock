@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.17.0" %}
-{% set sha256 = "b536d14166b05e2183b19ae105a7af849cd14d4c1f70d3009d9b1828c0ab3d92" %}
+{% set version = "2.18.0" %}
+{% set sha256 = "2445f8b5bf87ba105d239cb230878646e29dbc6a6cae10037ba0550d8fe7fc73" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
