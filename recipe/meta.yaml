@@ -91,7 +91,9 @@ test:
     # match its own tested dependency versions; -W default opts this
     # environment out, the same way Scrapy's tox.ini does for its own envs
     # with different pinned dependencies.
-    - pytest _scrapy tests -W default
+    # The CI image sets REQUESTS_CA_BUNDLE to an empty string, which recent
+    # botocore releases reject outright when creating an S3 client.
+    - unset REQUESTS_CA_BUNDLE && pytest _scrapy tests -W default
 
 about:
   home: https://scrapy.org/
