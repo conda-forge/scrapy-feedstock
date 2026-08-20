@@ -87,7 +87,11 @@ test:
   commands:
     - scrapy version -v
     - mv scrapy _scrapy
-    - pytest _scrapy tests
+    # Scrapy's pyproject.toml turns warnings into errors for environments that
+    # match its own tested dependency versions; -W default opts this
+    # environment out, the same way Scrapy's tox.ini does for its own envs
+    # with different pinned dependencies.
+    - pytest _scrapy tests -W default
 
 about:
   home: https://scrapy.org/
