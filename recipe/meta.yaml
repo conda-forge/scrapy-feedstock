@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.17.0" %}
-{% set sha256 = "b536d14166b05e2183b19ae105a7af849cd14d4c1f70d3009d9b1828c0ab3d92" %}
+{% set version = "2.18.0" %}
+{% set sha256 = "2445f8b5bf87ba105d239cb230878646e29dbc6a6cae10037ba0550d8fe7fc73" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -23,7 +23,7 @@ build:
     - scrapy = scrapy.cmdline:execute
 
 # The requirements below shall match the requirements from the target package
-# version (check setup.py for changes).
+# version (check pyproject.toml for changes).
 requirements:
   host:
     - python {{ python_min }}
@@ -35,9 +35,9 @@ requirements:
     # pywin32 exists for unix as a noop package
     - pywin32
 
-    # Same order as setup.py:
+    # Same order as pyproject.toml:
     - twisted >=21.7.0
-    - cryptography >=37.0.0
+    - cryptography >=41.0.5
     - cssselect >=0.9.1
     - defusedxml >=0.7.1
     - itemadapter >=0.1.0
@@ -46,32 +46,36 @@ requirements:
     - packaging
     - parsel >=1.5.0
     - protego >=0.1.15
-    - pyOpenSSL >=22.0.0
-    - queuelib >=1.4.2
-    - service_identity >=23.1.0
+    - pyOpenSSL >=24.3.0
+    - queuelib >=1.6.1
+    - service_identity >=24.2.0
     - tldextract
-    - w3lib >=1.17.0
+    - w3lib >=2.1.1
     - zope.interface >=5.1.0
     - pydispatcher >=2.0.5
+    - brotli-python >=1.2.0
+    # On Python 3.14 and higher the standard library compression.zstd module is
+    # used instead, but a noarch package cannot require this conditionally.
+    - backports.zstd >=1.3.0
 
 test:
   requires:
     - python {{ python_min }}
     - attrs
     - botocore
-    - brotli >=1.2.0
     - bpython  # [not win]
-    - httpx
+    - httpx2
     - ipython
     - google-cloud-storage
     - pip
     - jmespath
     - pexpect
     - pillow
+    - ptpython
     - pyftpdlib
     - pytest >=8.4.1
+    - pytest-rerunfailures
     - pytest-twisted
-    - testfixtures
     - priority >=1.1.0,<2.0
     - sybil
     - setuptools-scm   # required indirectly by pytest-forked
@@ -83,7 +87,13 @@ test:
   commands:
     - scrapy version -v
     - mv scrapy _scrapy
-    - pytest _scrapy tests
+    # Scrapy's pyproject.toml turns warnings into errors for environments that
+    # match its own tested dependency versions; -W default opts this
+    # environment out, the same way Scrapy's tox.ini does for its own envs
+    # with different pinned dependencies.
+    # The CI image sets REQUESTS_CA_BUNDLE to an empty string, which recent
+    # botocore releases reject outright when creating an S3 client.
+    - unset REQUESTS_CA_BUNDLE && pytest _scrapy tests -W default
 
 about:
   home: https://scrapy.org/
