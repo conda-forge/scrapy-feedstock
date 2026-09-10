@@ -49,14 +49,14 @@ requirements:
     - parsel >=1.5.0
     - platformdirs >=2.0.0
     - protego >=0.1.15
-    - pyopenssl >=24.3.0
+    - pyOpenSSL >=24.3.0
     - queuelib >=1.6.1
-    - service-identity >=24.2.0
+    - service_identity >=24.2.0
     - tldextract
     - w3lib >=2.1.1
-    - zope-interface >=5.1.0
+    - zope.interface >=5.1.0
     - pydispatcher >=2.0.5
-    - brotli >=1.2.0
+    - brotli-python >=1.2.0
     # On Python 3.14 and higher the standard library compression.zstd module is
     # used instead, but a noarch package cannot require this conditionally.
     - backports.zstd >=1.3.0
