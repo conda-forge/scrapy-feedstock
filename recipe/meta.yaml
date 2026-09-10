@@ -3,8 +3,8 @@
 # https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages
 #
 {% set name = "Scrapy" %}
-{% set version = "2.18.0" %}
-{% set sha256 = "2445f8b5bf87ba105d239cb230878646e29dbc6a6cae10037ba0550d8fe7fc73" %}
+{% set version = "2.19.0" %}
+{% set sha256 = "34130726582b64c91531162ab277c4053e558876d49ba219cb43679e71d80a87" %}
 
 package:
   name: {{ name|lower }}
@@ -37,6 +37,8 @@ requirements:
 
     # Same order as pyproject.toml:
     - twisted >=21.7.0
+    - aiohttp >=3.13.3
+    - charset-normalizer >=3.4.0
     - cryptography >=41.0.5
     - cssselect >=0.9.1
     - defusedxml >=0.7.1
@@ -45,6 +47,7 @@ requirements:
     - lxml >=4.6.4
     - packaging
     - parsel >=1.5.0
+    - platformdirs >=2.0.0
     - protego >=0.1.15
     - pyOpenSSL >=24.3.0
     - queuelib >=1.6.1
@@ -113,3 +116,4 @@ extra:
     - Gallaecio
     - wRAR
     - dangra
+    - AdrianAtZyte
